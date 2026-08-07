@@ -1,241 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0c">
-  <meta name="description" content="HARDTIME — гриферский Minecraft сервер. Донат, PvP, кланы, аирдропы и уникальные механики.">
-  <title>HARDTIME — Гриферский сервер</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ff6a00" />
+  <title>HARDTIME — Гриферский Minecraft сервер</title>
+  <meta name="description" content="HARDTIME — динамичный гриферский Minecraft сервер. Донаты, PvP, ивенты, экономика и живое сообщество." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+  <div class="noise"></div>
 
-  <header class="header">
-    <div class="container nav">
-      <a class="logo" href="#home">
-        <span class="logo-box">H</span>
-        <span>HARD<span>TIME</span></span>
-      </a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="HARDTIME">
+      <span class="brand-mark">H</span>
+      <span>HARD<span>TIME</span></span>
+    </a>
 
-      <nav id="navMenu">
-        <a href="#home">Главная</a>
-        <a href="#donate">Донат</a>
-        <a href="#features">Возможности</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
+    <nav class="nav">
+      <a href="#home">Главная</a>
+      <a href="#donate">Донат</a>
+      <a href="#features">О сервере</a>
+      <a href="#links">Ссылки</a>
+    </nav>
 
-      <div class="nav-actions">
-        <a class="discord-top" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Discord</a>
-        <button class="burger" id="burger">☰</button>
-      </div>
-    </div>
+    <a class="discord mini" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">
+      Discord
+    </a>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="hero-shade"></div>
-      <div class="orange-orb orb-one"></div>
-      <div class="orange-orb orb-two"></div>
+    <section id="home" class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span></span> HARDTIME • 1.16.5+</div>
+        <h1>
+          ГРИФЕРСКИЙ<br />
+          <span>MINECRAFT</span> СЕРВЕР
+        </h1>
+        <p class="lead">
+          Жёсткий PvP, экономика, уникальные механики, ивенты и донаты без скучной подачи.
+          Заходи и начинай свою историю на HARDTIME.
+        </p>
 
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <div class="online-pill"><i></i> HARDTIME • СЕРВЕР РАБОТАЕТ</div>
-          <h1>ВРЕМЯ<br><span>ДОМИНИРОВАТЬ.</span></h1>
-          <p class="hero-text">
-            Гриферский Minecraft-сервер с жёстким PvP, кланами, аирдропами,
-            экономикой и уникальными предметами.
-          </p>
-
-          <div class="hero-buttons">
-            <button class="ip-button copy-ip">
-              <span>НАЧАТЬ ИГРАТЬ</span>
+        <div class="hero-actions">
+          <button class="primary" id="copyIp" data-ip="silentfall.aurorix.pro">
+            <span class="pulse-dot"></span>
+            <span>
+              <small>IP СЕРВЕРА</small>
               <b>silentfall.aurorix.pro</b>
-              <small>Нажми, чтобы скопировать IP</small>
-            </button>
-            <a href="#donate" class="outline-button">Смотреть донат →</a>
-          </div>
+            </span>
+            <span class="copy-icon">⧉</span>
+          </button>
 
-          <div class="quick-info">
-            <div><b>1.16.5+</b><span>Поддержка версий</span></div>
-            <div><b>24/7</b><span>Доступность</span></div>
-            <div><b>GRIEF</b><span>Режим сервера</span></div>
-          </div>
+          <a class="ghost" href="#donate">Смотреть донаты ↓</a>
         </div>
 
-        <aside class="server-panel">
-          <div class="panel-noise"></div>
-          <div class="panel-status"><i></i> ONLINE</div>
-          <div class="big-logo">HT</div>
-          <div class="panel-title">HARDTIME</div>
-          <div class="panel-subtitle">ТВОЁ ВРЕМЯ. ТВОИ ПРАВИЛА.</div>
-
-          <div class="server-address">
-            <span>IP СЕРВЕРА</span>
-            <strong>silentfall.aurorix.pro</strong>
-          </div>
-
-          <button class="panel-copy copy-ip">СКОПИРОВАТЬ IP</button>
-          <a class="panel-discord" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">ВОЙТИ В DISCORD</a>
-        </aside>
+        <div class="quick-stats">
+          <div><b>8</b><span>донат-рангов</span></div>
+          <div><b>PvP</b><span>жёсткая игра</span></div>
+          <div><b>24/7</b><span>сервер онлайн</span></div>
+        </div>
       </div>
 
-      <div class="scroll-hint">ЛИСТАЙ НИЖЕ <span>↓</span></div>
-    </section>
-
-    <section class="marquee">
-      <div class="marquee-track">
-        <span>PVP</span><i>✦</i><span>КЛАНЫ</span><i>✦</i><span>АИРДРОПЫ</span><i>✦</i>
-        <span>КЕЙСЫ</span><i>✦</i><span>АВТО-ШАХТА</span><i>✦</i><span>ЭКОНОМИКА</span><i>✦</i>
-        <span>PVP</span><i>✦</i><span>КЛАНЫ</span><i>✦</i><span>АИРДРОПЫ</span><i>✦</i>
-        <span>КЕЙСЫ</span><i>✦</i><span>АВТО-ШАХТА</span><i>✦</i><span>ЭКОНОМИКА</span><i>✦</i>
-      </div>
-    </section>
-
-    <section class="section donate" id="donate">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="kicker">МАГАЗИН ПРИВИЛЕГИЙ</span>
-            <h2>ВЫБЕРИ <em>СВОЙ УРОВЕНЬ</em></h2>
+      <div class="hero-art reveal">
+        <div class="server-card">
+          <div class="server-card__top">
+            <span class="status-dot"></span>
+            <span>HARDTIME ONLINE</span>
+            <span class="ping">LIVE</span>
           </div>
-          <p>Нажми «Купить» — тебя перекинет в Discord, где можно оформить привилегию.</p>
+
+          <div class="logo-orb">
+            <div class="orb-ring ring-1"></div>
+            <div class="orb-ring ring-2"></div>
+            <div class="orb-core">HT</div>
+          </div>
+
+          <div class="server-card__title">HARDTIME</div>
+          <div class="server-card__sub">ЛУЧШИЙ ГРИФЕРСКИЙ СЕРВЕР</div>
+
+          <div class="server-card__lines">
+            <span></span><span></span><span></span>
+          </div>
         </div>
 
-        <div class="donate-grid">
-          <article class="rank-card vandal">
-            <div class="rank-top"><span class="rank-index">01</span><span class="rank-badge">START</span></div>
-            <h3>VANDAL</h3>
-            <div class="rank-price"><b>29</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Стартовые команды</li><li>Уникальный префикс</li><li>Больше возможностей</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card razor">
-            <div class="rank-top"><span class="rank-index">02</span><span class="rank-badge">BASIC</span></div>
-            <h3>RAZOR</h3>
-            <div class="rank-price"><b>59</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Расширенные команды</li><li>Бонусные возможности</li><li>Особый статус</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card venom">
-            <div class="rank-top"><span class="rank-index">03</span><span class="rank-badge">PLUS</span></div>
-            <h3>VENOM</h3>
-            <div class="rank-price"><b>99</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Больше игровых команд</li><li>Улучшенные бонусы</li><li>Выделение среди игроков</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card ripper popular">
-            <div class="popular-label">ПОПУЛЯРНЫЙ</div>
-            <div class="rank-top"><span class="rank-index">04</span><span class="rank-badge">PRO</span></div>
-            <h3>RIPPER</h3>
-            <div class="rank-price"><b>149</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Сильный набор команд</li><li>Дополнительный комфорт</li><li>Заметная привилегия</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card nemesis">
-            <div class="rank-top"><span class="rank-index">05</span><span class="rank-badge">ELITE</span></div>
-            <h3>NEMESIS</h3>
-            <div class="rank-price"><b>229</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Продвинутые команды</li><li>Много полезных функций</li><li>Элитный статус</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card warlord">
-            <div class="rank-top"><span class="rank-index">06</span><span class="rank-badge">EPIC</span></div>
-            <h3>WARLORD</h3>
-            <div class="rank-price"><b>349</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Мощные возможности</li><li>Премиальный набор</li><li>Высокий статус</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card bringer">
-            <div class="rank-top"><span class="rank-index">07</span><span class="rank-badge">LEGEND</span></div>
-            <h3>BRINGER</h3>
-            <div class="rank-price"><b>499</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Почти максимум функций</li><li>Редкие возможности</li><li>Легендарный статус</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-
-          <article class="rank-card dadmin ultimate">
-            <div class="popular-label">МАКСИМУМ</div>
-            <div class="rank-top"><span class="rank-index">08</span><span class="rank-badge">ULTIMATE</span></div>
-            <h3>D.ADMIN</h3>
-            <div class="rank-price"><b>650</b><span>₽</span></div>
-            <div class="rank-line"></div>
-            <ul><li>Максимальный уровень</li><li>Эксклюзивные возможности</li><li>Особое оформление</li></ul>
-            <a class="buy-btn" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">КУПИТЬ <span>→</span></a>
-          </article>
-        </div>
-
-        <div class="sale-box">
-          <div class="sale-icon">%</div>
-          <div><span>ПРОМОКОД</span><h3>HARD — СКИДКА 35%</h3><p>Условия и срок действия уточняйте в Discord.</p></div>
-          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">ПЕРЕЙТИ В DISCORD →</a>
-        </div>
+        <div class="floating-badge badge-1">⚔ PvP</div>
+        <div class="floating-badge badge-2">✦ Ивенты</div>
+        <div class="floating-badge badge-3">◆ Донаты</div>
       </div>
     </section>
 
-    <section class="section features" id="features">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="kicker">HARDTIME</span><h2>ЗДЕСЬ НЕ БЫВАЕТ <em>СКУЧНО</em></h2></div>
-          <p>Система сервера построена так, чтобы постоянно было за что сражаться и к чему стремиться.</p>
-        </div>
+    <section class="strip reveal">
+      <div>HARDTIME</div><span>✦</span>
+      <div>GRIEF</div><span>✦</span>
+      <div>PVP</div><span>✦</span>
+      <div>EVENTS</div><span>✦</span>
+      <div>ECONOMY</div>
+    </section>
 
-        <div class="feature-grid">
-          <article><span>⚔</span><h3>ЖЁСТКОЕ PVP</h3><p>Сражайся за ресурсы, территории и статус.</p></article>
-          <article><span>♜</span><h3>КЛАНЫ</h3><p>Создавай команду, союзничай и объявляй войны.</p></article>
-          <article><span>✦</span><h3>АИРДРОПЫ</h3><p>Опасные события с ценным лутом и боссами.</p></article>
-          <article><span>◆</span><h3>ЭКОНОМИКА</h3><p>Скупщик, магазин и внутриигровая валюта.</p></article>
-          <article><span>⛏</span><h3>АВТО-ШАХТА</h3><p>Редкости, обновления и полезные ресурсы.</p></article>
-          <article><span>☄</span><h3>УНИКАЛЬНЫЙ ЛУТ</h3><p>Руны, стрелы, зелья и другие PvP-предметы.</p></article>
-        </div>
+    <section id="features" class="section">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span></span> ПОЧЕМУ HARDTIME</div>
+        <h2>СЕРВЕР, КОТОРЫЙ<br><span>НЕ ДАЁТ СКУЧАТЬ</span></h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="icon">⚔</div>
+          <h3>Жёсткий PvP</h3>
+          <p>Собирай ресурсы, прокачивайся, выходи на бой и доказывай, кто здесь сильнее.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="icon">✦</div>
+          <h3>Ивенты</h3>
+          <p>Аирдропы, активности, боссы и награды, ради которых есть смысл заходить каждый день.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="icon">⬡</div>
+          <h3>Экономика</h3>
+          <p>Скупщик, аукцион, редкие предметы и внутренняя валюта — всё завязано в одной системе.</p>
+        </article>
       </div>
     </section>
 
-    <section class="cta-section" id="contacts">
-      <div class="container">
-        <div class="cta">
-          <div class="cta-glow"></div>
-          <span class="kicker">ГОТОВ?</span>
-          <h2>ЗАЛЕТАЙ НА <em>HARDTIME</em></h2>
-          <p>Скопируй IP и начинай играть. Новости и покупка доната — в Discord.</p>
-          <div class="cta-actions">
-            <button class="copy-ip">silentfall.aurorix.pro <span>КОПИРОВАТЬ</span></button>
-            <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">DISCORD →</a>
-          </div>
-          <div class="social-links">
-            <a href="https://vk.com/hardttime" target="_blank" rel="noopener">VK.COM/@HARDTTIME</a>
-            <a href="https://t.me/hardtimme" target="_blank" rel="noopener">T.ME/@HARDTIMME</a>
-          </div>
-        </div>
+    <section id="donate" class="section donate-section">
+      <div class="section-head reveal">
+        <div class="eyebrow"><span></span> ПРИВИЛЕГИИ</div>
+        <h2>ВЫБЕРИ СВОЙ<br><span>ДОНАТ-РАНГ</span></h2>
+        <p>Нажми «Купить» — тебя перенаправит в Discord.</p>
+      </div>
+
+      <div class="donate-grid">
+        <article class="donate-card reveal" data-tier="hero">
+          <div class="rank">HERO</div><div class="price">29₴</div>
+          <ul><li>Стартовые бонусы</li><li>Доп. команды</li><li>Выделение в чате</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal" data-tier="god">
+          <div class="rank">GOD</div><div class="price">59₴</div>
+          <ul><li>Больше возможностей</li><li>Улучшенный набор</li><li>Красивый префикс</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal" data-tier="supreme">
+          <div class="rank">SUPREME</div><div class="price">99₴</div>
+          <ul><li>Полезные команды</li><li>Усиленные бонусы</li><li>Больше комфорта</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal featured" data-tier="wither">
+          <div class="hot">ПОПУЛЯРНО</div>
+          <div class="rank">WITHER</div><div class="price">149₴</div>
+          <ul><li>Продвинутые функции</li><li>Особые возможности</li><li>Приоритетный ранг</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal" data-tier="legend">
+          <div class="rank">LEGENDA</div><div class="price">229₴</div>
+          <ul><li>Сильный набор</li><li>Расширенные команды</li><li>Особый статус</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal" data-tier="phoenix">
+          <div class="rank">PHOENIX</div><div class="price">349₴</div>
+          <ul><li>Премиум-возможности</li><li>Улучшенные бонусы</li><li>Редкий префикс</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal" data-tier="avenger">
+          <div class="rank">AVENGER</div><div class="price">499₴</div>
+          <ul><li>Максимум комфорта</li><li>Эксклюзивные функции</li><li>Высокий статус</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+
+        <article class="donate-card reveal featured" data-tier="phantom">
+          <div class="hot">TOP</div>
+          <div class="rank">PHANTOM</div><div class="price">699₴</div>
+          <ul><li>Топовая привилегия</li><li>Максимум возможностей</li><li>Особое оформление</li></ul>
+          <a href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Купить</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="links" class="cta reveal">
+      <div>
+        <div class="eyebrow"><span></span> ПРИСОЕДИНЯЙСЯ</div>
+        <h2>ГОТОВ ЗАЙТИ<br><span>НА HARDTIME?</span></h2>
+        <p>Следи за новостями, обновлениями и общайся с игроками.</p>
+      </div>
+      <div class="cta-links">
+        <a class="primary-link" href="https://discord.gg/x3kXmXAU5Z" target="_blank" rel="noopener">Discord</a>
+        <a href="https://t.me/hardtimme" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://vk.com/@hardttime" target="_blank" rel="noopener">VK</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer">
-      <a class="logo" href="#home"><span class="logo-box">H</span><span>HARD<span>TIME</span></span></a>
-      <p>© 2026 HARDTIME. Не является официальным продуктом Mojang Studios.</p>
-    </div>
+    <div class="brand"><span class="brand-mark">H</span><span>HARD<span>TIME</span></span></div>
+    <p>© 2026 HARDTIME. Не является официальным продуктом Mojang Studios.</p>
   </footer>
 
-  <div class="toast" id="toast">IP скопирован!</div>
+  <div id="toast">IP скопирован!</div>
   <script src="script.js"></script>
 </body>
 </html>
