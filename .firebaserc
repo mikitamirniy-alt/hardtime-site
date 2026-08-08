@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "hardtime-7ab36"
+  },
+  "targets": {
+    "hardtime-7ab36": {
+      "hosting": {
+        "hardtime": [
+          "hardtime"
+        ]
+      }
+    }
+  }
+}

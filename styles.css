@@ -14,10 +14,7 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:
-    radial-gradient(circle at 20% 10%, rgba(255,106,0,.12), transparent 32%),
-    radial-gradient(circle at 85% 20%, rgba(255,138,0,.08), transparent 28%),
-    var(--bg);
+  background:#07090d;
   color:var(--text);
   font-family:Inter,system-ui,sans-serif;
   overflow-x:hidden;
@@ -25,7 +22,7 @@ body{
 a{text-decoration:none;color:inherit}
 button{font:inherit}
 .bg-grid{
-  position:fixed; inset:0; pointer-events:none; opacity:.15; z-index:-4;
+  position:fixed; inset:0; pointer-events:none; opacity:.08; z-index:-4;
   background-image:
     linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
@@ -62,8 +59,8 @@ button{font:inherit}
 }
 main{width:min(1220px,90vw);margin:0 auto}
 .hero{
-  min-height:calc(100vh - 76px);display:grid;grid-template-columns:1.05fr .95fr;
-  align-items:center;gap:60px;padding:70px 0 80px;
+  min-height:calc(100vh - 76px);display:grid;grid-template-columns:1fr;
+  align-items:center;gap:30px;padding:90px 0 100px;
 }
 .eyebrow{font-size:12px;letter-spacing:2.6px;font-weight:800;color:#d7dbe1;display:flex;gap:10px;align-items:center}
 .eyebrow span{width:28px;height:2px;background:var(--orange);box-shadow:0 0 18px rgba(255,106,0,.9)}
@@ -217,4 +214,138 @@ footer{
   .section{padding-top:78px}
   .cta{padding:28px;margin-top:80px}
   footer{flex-direction:column;align-items:flex-start}
+}
+
+
+/* === HARDTIME v5: индивидуальные цвета донатов === */
+.donate-card .rank,
+.donate-card .price{
+  transition:.25s ease;
+}
+.donate-card[data-tier="vandal"]{
+  --rank1:#36d1dc; --rank2:#5b86e5;
+}
+.donate-card[data-tier="razor"]{
+  --rank1:#a855f7; --rank2:#ec4899;
+}
+.donate-card[data-tier="venom"]{
+  --rank1:#e5e7eb; --rank2:#9ca3af;
+}
+.donate-card[data-tier="rampage"]{
+  --rank1:#ff3d3d; --rank2:#ff8a00;
+}
+.donate-card[data-tier="nemesis"]{
+  --rank1:#7c3aed; --rank2:#c084fc;
+}
+.donate-card[data-tier="warlord"]{
+  --rank1:#2563eb; --rank2:#38bdf8;
+}
+.donate-card[data-tier="bringer"]{
+  --rank1:#ff4d6d; --rank2:#ff8fa3;
+}
+.donate-card[data-tier="dadmin"]{
+  --rank1:#ff8a00; --rank2:#ffd166;
+}
+
+.donate-card{
+  border-color:color-mix(in srgb, var(--rank1, #ff6a00) 28%, rgba(255,255,255,.08));
+}
+.donate-card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 85% 8%, color-mix(in srgb, var(--rank1, #ff6a00) 23%, transparent), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--rank1, #ff6a00) 5%, transparent), transparent 45%);
+}
+.donate-card .rank{
+  position:relative;
+  z-index:1;
+  background:linear-gradient(90deg,var(--rank1,#ff6a00),var(--rank2,#fff));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 28px color-mix(in srgb, var(--rank1,#ff6a00) 24%, transparent);
+}
+.donate-card .price{
+  position:relative;
+  z-index:1;
+  color:var(--rank2,#ff6a00);
+  text-shadow:0 0 24px color-mix(in srgb, var(--rank1,#ff6a00) 24%, transparent);
+}
+.donate-card li:before{
+  color:var(--rank1,#ff6a00);
+}
+.donate-card a{
+  position:relative;
+  z-index:1;
+  border-color:color-mix(in srgb, var(--rank1,#ff6a00) 48%, transparent);
+  background:color-mix(in srgb, var(--rank1,#ff6a00) 10%, transparent);
+}
+.donate-card a:hover{
+  background:linear-gradient(90deg,var(--rank1,#ff6a00),var(--rank2,#ff9b14));
+  color:#07090d;
+  border-color:transparent;
+}
+.donate-card:hover{
+  border-color:color-mix(in srgb, var(--rank1,#ff6a00) 70%, white 5%);
+  box-shadow:
+    0 24px 65px rgba(0,0,0,.34),
+    0 0 42px color-mix(in srgb, var(--rank1,#ff6a00) 16%, transparent);
+}
+.donate-card.featured .hot{
+  background:linear-gradient(90deg,var(--rank1,#ff6a00),var(--rank2,#ff9b14));
+}
+
+/* Фон со шейдерами остаётся главным, без центральной "голограммы". */
+.hero-copy{
+  max-width:860px;
+  padding:38px 0;
+}
+
+/* === HARDTIME v6: новый стартовый шейдерный фон === */
+.hero{
+  position:relative;
+  isolation:isolate;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  background:
+    linear-gradient(90deg,rgba(5,7,10,.80) 0%,rgba(5,7,10,.54) 42%,rgba(5,7,10,.18) 72%,rgba(5,7,10,.38) 100%),
+    linear-gradient(180deg,rgba(5,7,10,.14) 0%,rgba(5,7,10,.12) 65%,#07090d 100%),
+    url("assets/hero-bg.png") center center / cover no-repeat;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:auto 0 0 0;
+  height:180px;
+  background:linear-gradient(transparent,#07090d);
+  pointer-events:none;
+}
+.hero .eyebrow,
+.hero h1,
+.hero .lead,
+.hero .quick-stats{
+  text-shadow:0 2px 18px rgba(0,0,0,.72);
+}
+
+/* D.ADMIN — красный топовый донат */
+.donate-card[data-tier="dadmin"]{
+  --rank1:#ff1f1f;
+  --rank2:#ff6464;
+}
+.donate-card[data-tier="dadmin"] .hot{
+  color:#fff;
+  background:linear-gradient(90deg,#b90000,#ff3131);
+  box-shadow:0 0 25px rgba(255,31,31,.28);
 }

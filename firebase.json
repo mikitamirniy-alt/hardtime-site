@@ -1,0 +1,13 @@
+{
+  "hosting": [
+    {
+      "target": "hardtime",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}

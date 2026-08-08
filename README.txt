@@ -1,4 +1,8 @@
-HARDTIME site v3
+HARDTIME site v6
 
-Загрузи index.html, styles.css, script.js в корень GitHub репозитория.
-Папку assets можно оставить — сейчас сайт не требует внешних картинок.
+Исправлено:
+- стартовый фон заменён на новый шейдерный скрин пользователя;
+- фон применяется только на первом экране, дальше сайт остаётся тёмным;
+- IP: d15.aurorix.net:25914;
+- D.ADMIN теперь красный;
+- цены: VANDAL 29₽, RAZOR 59₽, VENOM 99₽, RAMPAGE 149₽, NEMESIS 229₽, WARLORD 349₽, BRINGER 499₽, D.ADMIN 650₽.
